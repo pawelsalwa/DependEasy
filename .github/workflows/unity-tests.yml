@@ -1,0 +1,22 @@
+name: Unity Test Workflow
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Set up Unity
+      uses: game-ci/unity-actions/setup@v2
+      with:
+        unityVersion: '2021.3.0f1'  # Use your Unity version here
+    - name: Run Unit Tests
+      run: |
+        unity -runTests -projectPath . -testResults ./test-results.xml
+    - name: Upload Test Results
+      uses: actions/upload-artifact@v2
+      with:
+        name: Test Results
+        path: ./test-results.xml
