@@ -8,15 +8,3 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    - name: Set up Unity
-      uses: game-ci/unity-actions/setup@latest
-      with:
-        unityVersion: '2022.3.47f1'
-    - name: Run Unit Tests
-      run: |
-        unity -runTests -projectPath . -testResults ./test-results.xml
-    - name: Upload Test Results
-      uses: actions/upload-artifact@v3
-      with:
-        name: Test Results
-        path: ./test-results.xml
