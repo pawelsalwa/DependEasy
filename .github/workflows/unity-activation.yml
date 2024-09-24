@@ -5,7 +5,7 @@ on: workflow_dispatch
 jobs:
   requestManualActivationFile:
     name: Request manual activation file 🔑
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Unity - Activate
         uses: game-ci/unity-activate@v2.0.0
