@@ -11,3 +11,4 @@ jobs:
         run: |
           ls -la /home/runner  # Example of listing files in a typical location
           ls -la /opt  # Another common location for Unity installs
+          ls -la
