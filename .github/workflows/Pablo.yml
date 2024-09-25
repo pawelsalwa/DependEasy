@@ -1,26 +1,13 @@
-name: Pablo
-
-on: [push]
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - name: Setup Unity
+        uses: webbertakken/setup-unity@v2
+        with:
+          unityVersion: '2021.3.0f1'
 
-      - name: Create a file
+      - name: List directories
         run: |
-          touch myfile.txt
-
-      - name: Add content to the file
-        run: |
-          echo "xdddd" >> myfile.txt
-
-      - name: Display file content
-        run: |
-          cat myfile.txt
-        
-      - name: list all files
-        run: ls -la
+          ls -la /home/runner  # Example of listing files in a typical location
+          ls -la /opt  # Another common location for Unity installs
