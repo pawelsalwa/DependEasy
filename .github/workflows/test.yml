@@ -1,29 +1,22 @@
-name: Unity CI
+name: Docker Workflow
 
-on: workflow_dispatch
+on: [push, workflow_dispatch]
 
 jobs:
-  test:
-    name: Test my project 🧪
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          lfs: true
+      # Checkout the code from your repository
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - uses: actions/cache@v3
-        with:
-          path: Library
-          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: |
-            Library-
+      # Set up Docker Buildx (to use Docker commands)
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
 
-      - name: Run tests
-        uses: game-ci/unity-test-runner@v4
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+      # Pull and run the Docker image
+      - name: Run Docker container
+        run: |
+          docker pull ubuntu:20.04
+          docker run -v ${{ github.workspace }}:/app -w /app ubuntu:20.04 bash -c "echo Hello, Docker!"
