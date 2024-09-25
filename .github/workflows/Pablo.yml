@@ -1,0 +1,26 @@
+name: Pablo
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Create a file
+        run: |
+          touch myfile.txt
+
+      - name: Add content to the file
+        run: |
+          echo "xdddd" >> myfile.txt
+
+      - name: Display file content
+        run: |
+          cat myfile.txt
+        
+      - name: list all files
+        run: ls -la
