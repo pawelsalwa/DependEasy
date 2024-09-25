@@ -1,0 +1,21 @@
+name: Unity CI
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Unity
+        uses: game-ci/unity-setup@v2
+        with:
+          unityVersion: 2022.3.47f1
+      
+      - name: Run Unit Tests
+        uses: game-ci/unity-test-runner@v3
+        with:
+          testMode: editmode
