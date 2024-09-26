@@ -15,11 +15,13 @@ public class SomeBehaviour : MonoBehaviour
     [Inject] private SomeDependency dependency;
 
     private void Awake() {
-        Debug.Log(dependency.ToString()); // Throws NullReferenceException - Awake() is used for internal state
+        // Throws NullReferenceException - Awake() is used for internal state
+        Debug.Log(dependency.ToString());
     }
 
     private void Start() {
-        Debug.Log(dependency.ToString()); // works just fine - at Start(), all dependencies are already injected
+        // works just fine - at Start(), all dependencies are already injected
+        Debug.Log(dependency.ToString());
     }
 }
 ```
@@ -51,7 +53,9 @@ public class SomeBehaviour : MonoBehaviour
 ```
 To fill dependencies for objects created at runtime use **Factory.Instantiate** just similary to **Object.Instantiate**:
 ```csharp
-public void SpawnUnityObject(SomeBeaviour someBehaviour) => Factory.Instantiate(someBehaviour);
+public void SpawnUnityObject(SomeBehaviour someBehaviour) {
+    Factory.Instantiate(someBehaviour);
+}
 ```
 
 Note: This package doesn't suppot injection of objects that aren't **MonoBehaviours**. It's specifically designed for Unity and small indie projects with little tech stack and complexity overhead. Although it definitely could be added if needed.
