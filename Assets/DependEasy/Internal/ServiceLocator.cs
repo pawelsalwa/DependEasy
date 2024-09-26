@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DependEasy
+namespace DependEasy.Internal
 {
     internal static class ServiceLocator
     {

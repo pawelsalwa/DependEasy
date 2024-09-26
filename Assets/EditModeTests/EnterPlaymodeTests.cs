@@ -1,6 +1,5 @@
 using System.Collections;
 using DependEasy;
-using DependEasy.Attributes;
 using NUnit.Framework;
 using UnityEditor;
 using UnityEditor.SceneManagement;

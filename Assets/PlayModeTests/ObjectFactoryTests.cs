@@ -1,5 +1,6 @@
 using System.Collections;
 using DependEasy;
+using DependEasy.Internal;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;

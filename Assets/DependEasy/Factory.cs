@@ -1,3 +1,4 @@
+using DependEasy.Internal;
 using UnityEngine;
 
 namespace DependEasy

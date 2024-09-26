@@ -1,3 +1,5 @@
+using DependEasy.Internal;
+
 namespace DependEasy
 {
 	/// <summary>

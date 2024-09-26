@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-namespace DependEasy
+namespace DependEasy.Internal
 {
 	internal static class Injector
 	{

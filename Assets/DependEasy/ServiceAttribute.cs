@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DependEasy.Attributes
+namespace DependEasy
 {
 	/// <summary> Mark a MonoBehaviour with it to make it injectable. </summary>
 	[AttributeUsage(AttributeTargets.Class)]

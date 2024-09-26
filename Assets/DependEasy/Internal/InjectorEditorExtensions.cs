@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace DependEasy
+namespace DependEasy.Internal
 {
 	[InitializeOnLoad]
 	internal static class InjectorEditorExtensions

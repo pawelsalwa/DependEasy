@@ -1,0 +1,13 @@
+{
+  "name": "dependeasy",
+  "displayName": "DependEasy",
+  "description": "Unity lightweight dependency injection framework.",
+  "version": "0.0.1",
+  "unity": "2019.2",
+  "documentationUrl": "https://github.com/pawelsalwa/DependEasy",
+  "repository": {
+    "url": "https://github.com/pawelsalwa/DependEasy.git",
+    "type": "git",
+    "revision": ""
+  }
+}

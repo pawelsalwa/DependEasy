@@ -1,5 +1,4 @@
 using DependEasy;
-using DependEasy.Attributes;
 using UnityEngine;
 
 namespace DependEasyTests.Tests

@@ -1,10 +1,9 @@
 using System.Linq;
 using System.Reflection;
-using DependEasy.Attributes;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace DependEasy
+namespace DependEasy.Internal
 {
 	internal static class InitScenes
 	{
