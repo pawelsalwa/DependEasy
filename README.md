@@ -1,6 +1,10 @@
-Unity lightweight dependency injection framework.
+## About
+Unity really-lightweight dependency injection framework.
 ## Installation
-Via upm git dependency.
+Add this line to your **Packages/manifest.json** file in your Unity project:
+```
+"com.unity.dependeasy": "https://github.com/pawelsalwa/DependEasy.git?path=Assets/DependEasy"
+```
 ## Example
 Example usage:
 ```csharp
@@ -11,11 +15,13 @@ public class SomeBehaviour : MonoBehaviour
     [Inject] private SomeDependency dependency;
 
     private void Awake() {
-        Debug.Log(dependency.ToString()); // Throws NullReferenceException - Awake() is used for internal state
+        // Throws NullReferenceException - Awake() is used for internal state
+        Debug.Log(dependency.ToString());
     }
 
     private void Start() {
-        Debug.Log(dependency.ToString()); // works just fine - at Start(), all dependencies are already injected
+        // works just fine - at Start(), all dependencies are already injected
+        Debug.Log(dependency.ToString());
     }
 }
 ```
@@ -45,3 +51,11 @@ public class SomeBehaviour : MonoBehaviour
     [Inject] private ISomeInterface dependency;
 }
 ```
+To fill dependencies for objects created at runtime use **Factory.Instantiate** just similary to **Object.Instantiate**:
+```csharp
+public void SpawnUnityObject(SomeBehaviour someBehaviour) {
+    Factory.Instantiate(someBehaviour);
+}
+```
+
+Note: This package doesn't suppot injection of objects that aren't **MonoBehaviours**. It's specifically designed for Unity and small indie projects with little tech stack and complexity overhead. Although it definitely could be added if needed.
