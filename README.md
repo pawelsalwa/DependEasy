@@ -3,7 +3,7 @@ Unity really-lightweight dependency injection framework.
 ## Installation
 Add this line to your **Packages/manifest.json** file in your Unity project:
 ```
-"com.unity.dependeasy": "https://github.com/pawelsalwa/DependEasy.git?path=Assets/DependEasy"
+"com.pawelsalwa.dependeasy": "https://github.com/pawelsalwa/DependEasy.git?path=Assets/DependEasy"
 ```
 ## Example
 Example usage:

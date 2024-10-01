@@ -1,5 +1,5 @@
 {
-  "name": "dependeasy",
+  "name": "com.pawelsalwa.dependeasy",
   "displayName": "DependEasy",
   "description": "Unity lightweight dependency injection framework.",
   "version": "0.0.1",
