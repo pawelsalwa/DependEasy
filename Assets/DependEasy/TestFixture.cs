@@ -1,4 +1,5 @@
 using DependEasy.Internal;
+using UnityEngine;
 
 namespace DependEasy
 {
@@ -9,5 +10,7 @@ namespace DependEasy
 	public abstract class TestFixture
 	{
 		protected void FillDependencies() => InitScenes.ForceReinit();
+		
+		protected void RegisterConfig(ScriptableObject config) => ServiceLocator.RegisterService(config.GetType(), config);
 	}
 }
