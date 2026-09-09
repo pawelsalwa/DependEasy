@@ -33,7 +33,7 @@ namespace DependEasy.Internal
         
         private static void RegisterSerializedServices()
         {
-	        var mbs = UnityEngine.Object.FindObjectsOfType<MonoBehaviour>(true);
+	        var mbs = UnityEngine.Object.FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Include);
 	        var services = mbs.Where(x => x.GetType().GetCustomAttributes<ServiceAttribute>().Any());
 	        foreach (var service in services)
 	        {

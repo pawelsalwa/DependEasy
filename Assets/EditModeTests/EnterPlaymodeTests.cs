@@ -20,7 +20,7 @@ namespace EditModeTests
 		[UnityTest]
 		public IEnumerator ShouldHaveDependencySetAfterEnteredPlaymode()
 		{
-			var testObj = Object.FindObjectOfType<TestMonoBehaviour>();
+			var testObj = Object.FindAnyObjectByType<TestMonoBehaviour>();
 			
 			EditorApplication.isPlaying = true;
 			yield return new WaitUntil(() => EditorApplication.isPlaying);

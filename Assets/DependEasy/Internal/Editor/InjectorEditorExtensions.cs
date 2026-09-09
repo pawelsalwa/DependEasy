@@ -1,4 +1,4 @@
-#if UNITY_EDITOR
+
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -28,17 +28,17 @@ namespace DependEasy.Internal
 				{
 					case ObjectChangeKind.CreateGameObjectHierarchy:
 						stream.GetCreateGameObjectHierarchyEvent(i, out var data);
-						var createdGo = EditorUtility.InstanceIDToObject(data.instanceId) as GameObject;
+						var createdGo = EditorUtility.EntityIdToObject(data.entityId) as GameObject;
 						gos.Add(createdGo);
 						break;
 					case ObjectChangeKind.ChangeGameObjectStructureHierarchy:
 						stream.GetChangeGameObjectStructureHierarchyEvent(i, out var data1);
-						var createdGo1 = EditorUtility.InstanceIDToObject(data1.instanceId) as GameObject;
+						var createdGo1 = EditorUtility.EntityIdToObject(data1.entityId) as GameObject;
 						gos.Add(createdGo1);
 						break;
 					case ObjectChangeKind.ChangeGameObjectStructure:
 						stream.GetChangeGameObjectStructureEvent(i, out var data2);
-						var createdGo2 = EditorUtility.InstanceIDToObject(data2.instanceId) as GameObject;
+						var createdGo2 = EditorUtility.EntityIdToObject(data2.entityId) as GameObject;
 						gos.Add(createdGo2);
 						break;
 				}
@@ -57,4 +57,3 @@ namespace DependEasy.Internal
 
 	}
 }
-#endif
